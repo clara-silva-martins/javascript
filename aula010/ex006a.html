@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de interação </title>
+    <style>
+        div#cubo{
+            background-color: violet;
+            color: aliceblue;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 1.5em;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="cubo">
+        <p>Cubo colorido</p>
+    </div>
+
+    <div id="">
+        <h1>Somando valores</h1>
+        <input type="number" name="numero1" id="numero1"> +
+        <input type="number" name="numero2" id="numero2">
+        <input type="submit" value="Somar" onclick="somar()">
+        <p id="resultado" >Resultado:</p>
+    </div>
+<br>
+    <div>
+        <h1>Subtraindo os valores</h1>
+        <input type="number" name="" id="numeroum"> - 
+        <input type="number" name="" id="numerodois">
+        <input type="submit" value="Subtrair" onclick="subtrair()">
+        <p id="resultadodois">Resultado: </p>
+    </div>
+<br>
+    <div>
+        <h1>Calcule a média de notas dos quatro bimestres</h1>
+        <label for="notaum">Digite a primeira nota</label>
+        <input type="number" name="names" id="notaum" required min="1" max="10">
+        <br>
+        <label for="notadois"> Digite a segunda nota:</label>
+        <input type="number" name="names" id="notadois" required min="1" max="10">
+        <br>
+        <label for="notatres">Digite a terceira nota: </label>
+        <input type="number" name="names" id="notatres" required min="1" max="10">
+        <br>
+        <label for="nota">Digite a quarta nota:</label>
+        <input type="number" name="names" id="notaquatro" required min="1" max="10">
+        <input type="submit" value="Calcular" onclick="dividir()">
+        <div id="resultadomedia">
+            Média das notas:
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function dividir(){
+
+        var nota1 = window.document.getElementById('notaum')
+        var nota2 = window.document.getElementById('notadois')
+        var nota3 = window.document.getElementById('notatres')
+        var nota4 = window.document.getElementById('notaquatro')
+        var resultadomediatotal = window.document.getElementById('resultadomedia')
+
+        var primeiranota = Number(nota1.value)
+        var segundanota = Number(nota2.value)
+        var terceiranota = Number(nota3.value)
+        var quartanota = Number(nota4.value)
+
+     
+        var somanotas = primeiranota + segundanota + terceiranota + quartanota
+        var mediatotal = somanotas / 4
+
+
+        resultadomediatotal.innerHTML = `A média das notas dos quatro bimestres é:${mediatotal} `
+
+        }
+
+
+
+        function somar(){
+
+        var numeroum = window.document.getElementById('numero1')
+        var numerodois = window.document.getElementById('numero2')
+        var resultado = window.document.getElementById('resultado')
+
+        if(numeroum.value == '' && numerodois.value == '') { 
+            window.alert('É necessário digitar os números!')
+            return;
+        }
+
+        var num1 = Number(numeroum.value)
+        var num2 = Number(numerodois.value)
+        var soma = num1 + num2
+
+
+
+        resultado.innerHTML=`A soma entre ${num1} + ${num2} é igual a ${soma}`
+    }
+
+
+
+
+
+        function subtrair(){
+            elemento1 = window.document.getElementById('numeroum')
+            elemento2 = window.document.getElementById('numerodois')
+            elemento3 = window.document.getElementById('resultadodois')
+
+            if(elemento1.value <= '5' && elemento2.value <= '10'){
+                window.alert('Faça a conta com valores maiores!')
+                return;
+            }
+
+            var element1 = Number(elemento1.value)
+            var element2 = Number(elemento2.value)
+            var subtrai = element1 - element2
+
+            resultadodois.innerHTML= `Ao subtrair o ${element1} e o número ${element2}, o resultado da subtração é:${subtrai}`
+
+        }
+    
+
+
+        var magicoum = window.document.getElementById('cubo')
+        var magicodois = window.document.getElementById('cubo')
+        var magicotres = window.document.getElementById('cubo')
+ 
+
+        magicoum.addEventListener('click', clicar)
+        magicodois.addEventListener('mouseenter', entrar)
+        magicotres.addEventListener('mouseout', sair)
+
+        function clicar(){
+            magicoum.innerText="Cor 1"
+            magicoum.style.background='pink'
+
+        }
+
+        function entrar(){
+            magicodois.innerText="Cor 2"
+            magicodois.style.background='#87CEEB'
+
+        }
+
+        function sair(){
+            magicotres.innerText="Cor 3"
+            magicotres.style.background='#BA55D3'
+
+        }
+
+    </script>
+    
+</body>
+</html>
