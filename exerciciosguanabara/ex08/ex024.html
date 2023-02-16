@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 24
+    </title>
+</head>
+<body>
+    <div>
+        Qual a distância que deseja percorrer em <strong>Km</strong>? <input type="number" name="" id="distancia1"> <input type="submit" onclick="enviar()">
+    </div>
+    <div id="resultado">
+    </div> 
+</body>
+<script>
+    function enviar(){
+        var distancia = window.document.getElementById('distancia1')
+        var res = window.document.getElementById('resultado')
+        var distanciakm = Number(distancia.value)
+
+        var taxa = 200
+
+        if (distanciakm <= 200){
+            res.innerHTML = `Até 200km/h percorrido, você pagará R$ 0,50 por km rodado. \n`
+            var taxa = distanciakm * 0.50
+            res.innerHTML += `\n O valor a pagar será R$ ${taxa}.`
+        } else {
+            res.innerHTML += `Passado 200km/h, você pagará R$ 0,45 por km rodado.`
+            var taxamenor = distanciakm * 0.45
+            res.innerHTML += `\n O valor a pagar será R$ ${taxamenor}.`
+        }
+
+    }
+
+</script>
+</html>

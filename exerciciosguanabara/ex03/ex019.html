@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+<body>
+    <div>
+        Qual é seu nome? <input type="text" id="prinome">
+    </div>
+    <div>
+        <p>Sua primeira nota: <input type="number" name="" id="nota1"></p>
+    </div>
+    <div>
+        Sua segunda nota: <input type="number" name="" id="nota2"> 
+    </div>
+    <br>
+    <div>
+        <input type="button" value="Enviar" onclick="calcular()">
+    </div> 
+    <div id="mensagem"></div>   
+</body>
+<script>
+    function calcular(){
+        var pronome = window.document.getElementById('prinome')
+        var n1 = window.document.getElementById('nota1')
+        var n2 = window.document.getElementById('nota2')
+        var msg= window.document.getElementById('mensagem')
+
+        var not1= Number(n1.value)
+        var not2= Number(n2.value)
+        var c= (not1 + not2) /2
+
+        msg.innerText = `Sua média é ${c}`
+
+        if(c > 7){
+            msg.innerText +=`Parabéns você foi APROVADO \n`
+        } else if (c > 5  &&  c < 7){
+            msg.innerText +=`Você está em RECUPERAÇÃO`
+        } else {
+            msg.innerText += `Você está REPROVADO`
+        }
+    }
+</script>
+</html>

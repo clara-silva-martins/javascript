@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+</head>
+<body>
+    <div>
+        Digite o ano que você nasceu: <input type="number" id="numeroano">
+        <input type="button" value="Descubra" onclick="Enviar()">
+    </div>
+    <div id="resultado">
+
+    </div> 
+</body>
+<script>
+    function Enviar(){
+        var nasc = window.document.getElementById('numeroano')
+        var anonascimento = Number(nasc.value)
+        var res = window.document.getElementById('resultado')
+        var agora = new Date
+        var anoatual = (agora.getFullYear())
+
+        var restantes = 18 - anonascimento
+        var idade = anoatual - anonascimento
+        var atraso = idade - 18
+
+        if(idade < 18){
+            res.innerHTML = `Você ainda é menor de idade, não pode se alistar.`
+        } else if (idade == 18){
+            res.innerHTML += `Você deve se ALISTAR.`
+        } else {
+            res.innerHTML += `Passaram ${atraso} anos de atraso pro alistamento. Se já se alistou desconsidere essa mensagem.`
+        }
+        
+
+    }
+</script>
+</html>

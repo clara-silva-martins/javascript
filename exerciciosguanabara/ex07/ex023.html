@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23</title>
+</head>
+<body>
+    <div>
+        Digite seu nome: <input type="text" id="nome">
+    </div>
+    <br>
+    <div>
+        <input type="radio" name="sexo" id="sfem">
+        <label for="sfem">Feminino </label>
+        <input type="radio" name="sexo" id="smasc">
+        <label for="smasc">Masculino</label>
+    </div>
+    <br>
+    <div>
+        Qual o valor das suas compras? <input type="number" name="" id="compras">
+    </div>
+    <br>
+    <div>
+        <input type="button" value="Enviar" onclick="enviar()">
+    </div>
+    <br>
+    <div id="resultado">
+
+    </div>
+    
+</body>
+<script>
+    function enviar(){
+        var usuario = window.document.getAnimations('nome')
+        var sexofem = window.document.getElementsByName('sxo')
+        var sexomasc = window.document.getElementByName('sexo')
+        var preco = window.document.getElementById('compras')
+
+        var valor = Number(preco.value)
+
+        var desconto1 = valor * 0.13
+        var desconto2 = valor * 0.05
+
+        var descontomulher = valor - desconto1
+        var descontohomem = valor - desconto2
+
+
+        var res = window.document.getElementById('resultado')
+
+        if (sexofem){
+            res.innerHTML = `Hoje no Dia da Mulher, nossas clientes mulheres ganham 13% de desconto em suas compras. \n`
+            res.innerHTML += `O total a pagar com desconto é ${descontomulher}.`
+        } else if(sexomasc){
+            res.innerHTML = `Hoje é o Dia da Mulher, homens ganham 5% de desconto no valor total de suas compras. `
+            res.innerHTML += `\n O otal a pagar com desconto é ${descontohomem}.`
+        }
+
+    }
+
+</script>
+
+</html>
